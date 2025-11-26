@@ -1,8 +1,20 @@
 'use client';
 
-import AuthButton from './components/AuthButton';
+import AuthButton from '@/components/AuthButton';
+import { useAuth } from '@/context/AuthContext';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function Home() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!loading && !user) {
+      router.push('/login');
+    }
+  }, [user, loading, router]);
+
   return (
     <div className="min-h-screen bg-linear-to-b from-blue-50 to-white">
       <nav className="bg-white shadow-sm">

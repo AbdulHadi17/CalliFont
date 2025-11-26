@@ -1,7 +1,7 @@
 'use client';
 
+import { signUp } from '@/lib/supabaseClient';
 import { useState } from 'react';
-import { signUp } from '../../lib/supabaseClient';
 import { useRouter } from 'next/navigation';
 
 export default function SignUpForm() {

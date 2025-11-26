@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '@/hooks/useAuth';
 import { useRouter } from 'next/navigation';
-import AuthButton from '../components/AuthButton';
+import AuthButton from '@/components/AuthButton';
 
 export default function Dashboard() {
   const { user, loading } = useAuth();

@@ -1,7 +1,7 @@
 'use client';
 
+import { signIn } from '@/lib/supabaseClient';
 import { useState } from 'react';
-import { signIn } from '../../lib/supabaseClient';
 import { useRouter } from 'next/navigation';
 
 export default function LoginForm() {
