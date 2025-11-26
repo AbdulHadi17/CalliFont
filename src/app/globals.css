@@ -41,16 +41,19 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-work-sans: var(--font-work-sans);
+  
+  /* Font families */
+  --font-sans: var(--font-outfit);
+  --font-body: var(--font-roboto);
+  --font-logo: var(--font-rockybilly);
 
   /* Primary colors */
-  --color-primary-100: #FFE8F0;
-  --color-primary: #EE2B69;
+  --color-primary-100: #F54927;
+  --color-primary: #C63B34;
+  --color-bg: #EEEEEE;
 
   /* Secondary color */
-  --color-secondary: #FBE843;
+  --color-secondary: #2c3e50;
 
   /* Black variants */
   --color-black-100: #333333;
@@ -141,5 +144,14 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-roboto), sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6, button, nav {
+    font-family: var(--font-outfit), sans-serif;
+  }
+  
+  .font-logo {
+    font-family: var(--font-rockybilly), cursive;
   }
 }

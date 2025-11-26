@@ -1,16 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit, Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import "@/app/globals.css";
-import { AuthProvider } from "../context/AuthContext";
+import { AuthProvider } from "@/context/AuthContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const roboto = Roboto({
+  variable: "--font-roboto",
+  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
+  display: "swap",
+});
+
+const rockybilly = localFont({
+  src: "./fonts/Rockybilly.ttf", // or .ttf, .otf - adjust based on your file
+  variable: "--font-rockybilly",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${outfit.variable} ${roboto.variable} ${rockybilly.variable} antialiased`}
       >
         <AuthProvider>
           {children}
