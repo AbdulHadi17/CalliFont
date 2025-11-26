@@ -3,6 +3,7 @@ import { Outfit, Roboto } from "next/font/google";
 import localFont from "next/font/local";
 import "@/app/globals.css";
 import { AuthProvider } from "@/context/AuthContext";
+import { ThemeProvider } from "@/components/theme-provider"
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -34,13 +35,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${outfit.variable} ${roboto.variable} ${rockybilly.variable} antialiased`}
       >
-        <AuthProvider>
-          {children}
-        </AuthProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <AuthProvider>
+            {children}
+          </AuthProvider>  
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -54,8 +54,8 @@ export default function SignUpForm() {
   };
 
   return (
-    <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold text-center">Create Account</h2>
+    <div className="w-full max-w-md p-8 space-y-6  rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold text-center text-foreground">Create Account</h2>
       
       {error && (
         <div className="p-3 text-sm text-red-700 bg-red-100 rounded-md">
